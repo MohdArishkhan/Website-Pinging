@@ -24,7 +24,7 @@ async function pingwebsites() {
         }
     }
 }
-
+setInterval(pingwebsites, 16 * 60 * 1000);
 
 app.listen(PORT ,() =>{
     console.log("back from browser");
