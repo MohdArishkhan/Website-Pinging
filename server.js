@@ -1,6 +1,7 @@
 import express from 'express';
 import fs from 'fs';
 import axios from 'axios';
+import path from 'path';
 const app = express();
 const PORT = 3000;
 
@@ -15,16 +16,16 @@ app.get('/', (req, res) => {
 });
 
 async function pingwebsites() {
-    for(const url of websites){
+    const results = await Promise.all(websites.map(async (url) => {
         try {
-            const response = await axios.get(url , {timeout:40000});
+            await axios.get(url, { timeout: 10000 });
             console.log(`${url} is up`);
         } catch (error) {
-            console.log(`${url} is down`)
+            console.log(`${url} is down`);
         }
-    }
+    }));
 }
-setInterval(pingwebsites, 16 * 60 * 1000);
+setInterval(pingwebsites, 8 * 60 * 1000);
 
 app.listen(PORT ,() =>{
     console.log("back from browser");
