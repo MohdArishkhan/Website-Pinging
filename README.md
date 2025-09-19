@@ -1,5 +1,7 @@
 # Ping-Websites
 
+Live Link :https://website-pinging.vercel.app/
+
 A simple Node.js project to monitor the availability of websites by periodically pinging them and reporting their status.
 
 ## Features
@@ -14,12 +16,10 @@ Ping-Websites/
 ├── package.json
 ├── server.js
 ├── websites.json
+## Live Project
+[Live Project: All-project-pinging-website (Railway)](https://website-pinging.vercel.app/)
 └── public/
     └── index.html
-```
-
-## Getting Started
-
 ### Prerequisites
 - Node.js (v14 or higher recommended)
 
